@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <style>
+    .mother {
+      width: 270px;
+      border: 2px solid lime;
+      padding: 20px;
+      /* overflow: hidden; */
+      /* float:left; */
+      /* display: inline-block; */
+      /* display: table-cell; */
+      /* position: absolute; */
+    }
+    .mother.left {
+      float: left;
+      margin-bottom: 20px;
+    }
+    .mother {
+      float: right;
+      border-color:blue;
+      position: relative;
+    }
+    .mother.right > .photo {
+      border-color:blue;
+    }
+    .mother > .photo {
+      border: 10px solid lime;
+      width: 100px;
+      height: 100px;
+      float: left;
+      margin-right: 20px;
+    }
+    .mother > p {
+      border: 1px solid red;
+    }
+    .grandmom {
+      border: 4px solid black;
+      padding:20px;
+      /* overflow: hidden; */
+      width: 670px;
+      position: relative;
+    }
+    .bottom {
+      border: 2px solid red;
+      padding: 10px;
+      clear: both;
+    }
+    header {
+      background-color: black;
+      color: white;
+      width: auto ;
+      height: auto;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      right: auto;
+      bottom: auto;
+      z-index: 100;
+      transition: all 0.4s cubic-bezier(0.51, 0.05, 0.31, 1.1);
+      /* transform: translate(-50%, -50%); */
+      /* margin-left: -150px;
+      margin-top: -100px; */
+    }
+    header:hover {
+      transform: scale(3) rotate(180deg);
+      transform-origin: center center;
+    }
+    .comment {
+      border: 1px solid red;
+      /* display: inline-block; */
+      position: absolute;
+      top: -12px;
+      right: -12px;
+    }
+    .comment > img {
+      width: 24px;
+      height: 24px;
+    }
+    .comment > span {
+      border: 1px solid orange;
+      position: absolute;
+      right: 100%;
+      top:0;
+    }
+
+    /* page */
+    .page {
+      border: 4px solid black;
+      padding-top: 20px;
+      width: 700px;
+      margin: 20px;
+      position: relative;
+    }
+    .list {
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .image_text {
+      border: 1px solid #DBDBDB;
+      padding: 13px 17px;
+      color:black;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      border-radius: 5px;
+    }
+    .image_text + .image_text {
+      margin-top: 10px;
+    }
+    .image_text > .photo {
+      margin-right:20px;
+      position: relative;
+    }
+    .image_text > .photo > .wish {
+      position: absolute;
+      border: none;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      font-size: 0;
+      top:10px;
+      right: 10px;
+      background-color: transparent;
+      background-image: url('./images/ico_like.svg');
+    }
+    .image_text > .text > h4{
+      color:black;
+      font-size: 20px;
+      margin-bottom: 11px;
+    }
+    .image_text > .text > p{
+      font-size: 12px;
+    }
+    .tab_menu {
+      border-bottom: 1px solid black;
+      display: flex;
+      padding-left: 17px;
+      font-family: "Noto Sans KR", sans-serif;
+    }
+    .tab_menu > li + li {
+      margin-left: 5px;
+    }
+    .tab_menu > li > a {
+      border: 1px solid #DADADA;
+      border-bottom: none;
+      border-radius: 10px 10px 0 0;
+      padding: 10px 20px;
+      display: block;
+      text-decoration-line: none;
+      color:black;
+      font-weight: 700;
+      font-size:20px;
+    }
+    .tab_menu > li > a:hover {
+      border: 1px solid #9C9C9C;
+      border-bottom: none;
+      background-color: #9C9C9C;
+      color:white
+    }
+    .page .more {
+      position: absolute;
+      top:25px;
+      right: 20px;
+      color:gray;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <ul class="tab_menu">
+    <li><a href="">교실</a></li>
+    <li><a href="">운동장</a></li>
+    <li><a href="">놀이터</a></li>
+    <li><a href="">학교강당</a></li>
+  </ul>
+  <div class="list">
+    <div class="image_text">
+      <div class="photo">
+        <img src="https://placehold.it/170x140" />
+        <button class="wish">wish</button>
+      </div>
+      <div class="text">
+        <h4>Lorem ipsum dolor sit amet</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci adipiscing feugiat orci nisi, sapien ullamcorper molestie. Non pulvinar in facilisis tincidunt cras amet. Vulputate scelerisque scelerisque imperdiet sem dignissim congue vulputate. Pulvinar est eget maecenas aliquam mattis cras diam volutpat pellentesque. Elementum diam, adipiscing blandit feugiat </p>
+      </div>
+    </div>
+    <div class="image_text">
+      <div class="photo">
+        <img src="./images/thumb.png" />
+        <button class="wish">wish</button>
+      </div>
+      <div class="text">
+        <h4>Lorem ipsum dolor sit amet</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci adipiscing feugiat orci nisi, sapien ullamcorper molestie. Non pulvinar in facilisis tincidunt cras amet. Vulputate scelerisque scelerisque imperdiet sem dignissim congue vulputate. Pulvinar est eget maecenas aliquam mattis cras diam volutpat pellentesque. Elementum diam, adipiscing blandit feugiat </p>
+      </div>
+    </div>
+    <div class="image_text">
+      <div class="photo">
+        <img src="./images/thumb.png" />
+        <button class="wish">wish</button>
+      </div>
+      <div class="text">
+        <h4>Lorem ipsum dolor sit amet</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci adipiscing feugiat orci nisi, sapien ullamcorper molestie. Non pulvinar in facilisis tincidunt cras amet. Vulputate scelerisque scelerisque imperdiet sem dignissim congue vulputate. Pulvinar est eget maecenas aliquam mattis cras diam volutpat pellentesque. Elementum diam, adipiscing blandit feugiat </p>
+      </div>
+    </div>
+  </div>
+  <a href="" class="more">모두보기</a>
+</div>
+
+
+<header><img src="https://placehold.it/321x200" /></header> 
+<div class="grandmom">
+  <div class="mother left">
+    <div class="photo"></div>
+    <p>Lorem ipsum carrots, enhanced undergraduate</p>
+    <a href="#" class="comment">
+      <img src="./images/icon_info.png" alt="댓글"/>
+      <span>888226</span>
+    </a>
+  </div>
+  <div class="mother right">
+    <div class="photo"></div>
+    <p>Lorem ipsum carrots, enhanced undergraduate</p>
+    <a href="#" class="comment">
+      <img src="./images/icon_info.png" alt="댓글"/>
+      <span>8</span>
+    </a>
+  </div>
+  <p class="bottom">Loremip sum carrots, enhanced undergraduate</p>
+</div>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>

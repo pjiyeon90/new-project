@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article</title>
+  <link rel="stylesheet" href="./CSS/reset.css">
+  <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+    .wrap {
+      width: 80%;
+      margin: 0 auto;
+      max-width: 800px;
+      min-width: 600px;
+    }
+    header {
+      background-color: black;
+      font-size: 24px;
+      color: white;
+      line-height: 40px;
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    header > h1 > time {
+      font-size: 10px;
+      line-height: 10px;
+      vertical-align: 5px;
+      color:red;
+    }
+    .contents {
+      border: 4px solid black;
+      padding:20px;
+    }
+    /* 기본 글상자 */
+    .contents > p { 
+      border: 4px solid #A1A1A1;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    /* 글상자 옵션 */
+    .contents > p.latest {
+      border-color: red;
+    }
+    .contents > p.best {
+      color: #ED00B9;
+    }
+    .paging {
+      background-color: black;
+      display: flex;
+      height: 40px;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .paging > strong{
+      margin-bottom: -4px;
+      /* border: 1px solid red; */
+    }
+    /* .paging > strong > a > img{
+    }/* vertical-align: -5px; */
+    
+    .paging > a {
+      /* border: 1px solid red; */
+      color: lime;
+      text-decoration-line: none;
+      padding: 0 4px;
+      margin: 0 5px;
+    }
+  
+  </style>
+</head>
+<body>
+  <article class="wrap">
+    <header>
+      <h1>테크 아티클 <time>2022-07-20</time></h1>
+    </header>
+    <div class="contents">
+      <p>Lorem ipsum carrots, enhanced undergraduate developer, but they do Lem ipsum carrots, enhanced undergraduate developer, but</p>
+      <p class="latest">Lorem ipsum carrots, enhanced undergraduate developer, but they do Lem ipsum carrots, enhanced undergraduate developer, but</p>
+      <p class="best">Lorem ipsum carrots, enhanced undergraduate developer, but they do Lem ipsum carrots, enhanced undergraduate developer, but</p>
+      <p>Lorem ipsum carrots, enhanced undergraduate developer, but they do Lem ipsum carrots, enhanced undergraduate developer, but</p>
+      <p class="latest best">Lorem ipsum carrots, enhanced undergraduate developer, but they do Lem ipsum carrots, enhanced undergraduate developer, but</p>
+      <div class="paging">
+        <strong><a href="" class="prev"><img src="./images/cil_arrow-circle-left.png" alt="prev"/></a></strong>
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <a href="">6</a>
+        <strong><a href="" class="next"><img src="./images/cil_arrow-circle-right.png" alt="next"/></a></strong>
+      </div>
+    </div>
+  </article>
+</body>
+</html>

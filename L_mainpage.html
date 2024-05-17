@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인페이지 연습</title>
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+    body{
+        font-family: 'Intel', 'Noto Sans', sans-serif;
+    }
+    .wrap{
+        width:375px;
+        height: 812px;
+        border: 1px solid black;
+        background-color: #f9fafc;
+    }
+    .system{
+        height: 41px;
+        background-color: rgb(199, 199, 199);
+    }
+    .main{
+        padding: 0 24px;
+    }
+    .main > header{
+        margin: 17px 0 33px -7px;
+        font-size: 18px;
+        font-weight: 700;
+        color:black;
+        display: flex;
+        align-items: center;
+    }
+    .main > header > a.ico.back{
+        display: block;
+        font-size: 0;
+        width:24px;
+        height: 24px;
+        background-image: url(./images/arrow_back.svg);
+        margin-right: 8px;
+    }
+    .wrap .day .item{
+        padding: 18px 0;
+    } 
+
+    
+    .wrap .day > h2{
+        font-size: 14px;
+        font-weight: 700;
+        color: #9B9B9B;
+        margin-bottom: 14px;
+    }
+    .wrap .day > ul{
+        border-radius: 8px;
+        background-color: white;
+        padding: 5px 16px;
+        box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.05) , 0px 10px 20px 0px rgba(255, 118, 118, 0.08);
+    }
+    .wrap .day .item{
+        padding: 18px 0;
+        display: flex;
+    }
+  
+    .wrap .day .item + .item{
+        border-top: 1px solid #E6E8F0;
+    }
+    .wrap .day .item::before{
+        content: '';
+        width: 38px;
+        height: 38px;
+        display: block;
+        background-color: #E6E8F0;
+        border-radius: 6px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin-right: 12px;
+    }
+    .wrap .day .item.trans::before{
+        background-image: url('./images/transfer_money.svg');
+    }
+    .wrap .day .item.wallet::before{
+        background-image: url('./images/wallet.svg');
+    }
+
+    .wrap .day .item .text{
+     font-size: 14px;
+     font-weight: 400;
+     
+    }
+    .wrap .day .item .text p{
+      color: #222222;
+    }
+    .wrap .day .item .text time{
+        color: #b3b3b3;
+    }
+    .wrap .day + .day{
+        margin-top: 34px;
+    }
+
+    </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="system"></div>
+    <div class="main">
+        <header><a href="#" class="ico back" target="_blank">back</a>
+        Notifications
+        </header>
+        <div class="days">
+        <div class="day">
+            <h2>Today</h2>
+            <ul>
+                <li class="item trans">
+                    <div class="text">
+                    <p>Transfered money to William</p>
+                    <time>12-06</time></div></li>
+                <li class="item wallet">
+                    <div class="text">
+                    <p>Received money to William</p>
+                    <time>12-06</time></div></li>
+                <li class="item trans">
+                    <div class="text">
+                    <p>Transfered money to William</p>
+                    <time>12-06</time></div></li>
+                <li class="item trans">
+                    <div class="text">
+                    <p>Transfered money to William</p>
+                    <time>12-06</time></div></li>
+            </ul>
+        </div>
+        <div class="day">
+            <h2>Yesterday</h2>
+            <ul>
+                <li class="item wallet">
+                    <div class="text">
+                    <p>Received money to William</p>
+                    <time>12-06</time></div></li>
+                <li class="item trans">
+                    <div class="text">
+                    <p>Transfered money to William</p>
+                    <time>12-06</time></div></li>
+                <li class="item wallet">
+                    <div class="text">
+                    <p>Received money to William</p>
+                    <time>12-06</time></div></li>
+            </ul>
+        </div>
+
+        </div>
+    </div><!--days-->
+    </div><!--main-->
+  </div><!--wrap-->
+</body>
+</html>

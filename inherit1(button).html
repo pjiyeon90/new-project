@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상속자(inherit)baseline</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital@0;1&family=Roboto:ital,wght@0,100;0,400;0,900;1,100;1,400;1,900&display=swap');
+        body{
+            font: 400 16px/1.5 "Roboto", sans-serif;
+        }
+        .text{
+            line-height: 50px;
+            background-color: blue;
+            color:black;
+            font-size: 30px;
+        }
+    .text > strong {
+      background-color: lime;
+         }
+     .text > span {
+      background-color: yellow;
+      font-size: 12px;
+      line-height: 12px;
+      vertical-align: baseline;
+      }
+      .text > span.baseline {
+      vertical-align: baseline;
+    }
+        .text > span.middle {
+      vertical-align: middle;
+    }
+    .text > span.super{
+        vertical-align: super;
+    }
+    .text > span.text-top {
+      vertical-align: text-top;
+    }
+    .text > span.text-bottom {
+      vertical-align: text-bottom;
+    }
+    .text > span.top {
+      vertical-align: top;
+    }
+    .text > span.bottom {
+      vertical-align: bottom;
+    }
+    .text > span.px{
+        vertical-align: -3 px;
+    }
+    .a{
+        width:100px;
+        height: 100px;
+        background-color: red;
+
+    }
+
+    .ex1{
+        background-color: black;
+        color: lime;
+        line-height: 200px;
+        font-size: 100px;
+        text-align: right;
+    }
+    .ex1 > strong{
+        font-weight: normal;
+    }
+    .ex1 > span{
+        font-size: 12px;
+        line-height: 12px;
+        vertical-align: top;
+    }
+
+    .ex2{
+        background-color: black;
+        color: lime;
+        line-height: 140px;
+        font-size: 70px;
+        text-align: center;
+        /*vertical-align: baseline;*/
+    }
+    .ex2 > strong{
+        font-weight: normal;
+    }
+    .ex2 > span{
+        font-size: 12px;
+        line-height: 12px;
+        vertical-align:middle;
+    }
+    .ex3{
+        background-color: black;
+        text-align: center;
+        line-height: 40px;
+        font-size: 0;
+        /* font-size: 16px; ctrl+K+C, Ctrl+K+U*/ 
+    
+    }
+    .ex3 > strong > a {
+        font-weight: 400;
+        text-decoration-line: none;
+        color: white;
+        font-size: 16px;
+        /* line-height: 16px; */
+        vertical-align: middle;
+        
+    }
+    .ex3 > a{
+        color: lime;
+        padding: 0 2px;      /*위아래 왼쪽오른쪽*/
+        margin: 0 3px;
+        /* border: 1px solid yellow; */
+        font-size: 16px;
+        /* line-height: 16px; */
+        vertical-align: middle;
+    /*border 박스를 씌우고 부모에 font-size 0을 줘서 간격을 맞출때는 자식에게 font-size를 16px을 주고 vertical-align:middle을 주면 됨 */
+    }
+
+    .ex4{
+        background-color: black;
+        text-align: center;
+        line-height: 40px;
+        vertical-align: middle;
+    }
+    .ex4 > strong > a > img{
+        line-height: 40px;
+        vertical-align: -7px;
+    }
+
+    .ex4 > a{
+        color: lime;
+        padding: 0 2px;
+        margin:  0 3px;
+        text-decoration: none;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="ex4">
+        <strong><a href="#"><img src="images/cil_arrow-circle-left.png" alt="prev"></a></strong>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <strong><a href="#"><img src="images/cil_arrow-circle-right.png" alt="next"></a></strong>
+
+
+    </div>
+
+<hr>
+
+    <div class="ex3">
+        <strong><a href="#">prev</a></strong>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <strong><a href="#">next</a></strong>
+    </div>
+
+<hr>
+    <div class="ex2">
+        <span>안녕</span>
+        <strong>kg</strong>
+        <span>안녕</span>
+    </div>
+    
+    <hr/>
+    
+    <div class="ex1">
+    <strong>kg</strong>
+    <span>안녕</span>
+    </div>
+    
+
+
+    <div class="text">
+        <strong>fxy</strong>
+        <span>baseline</span>
+        <span class="middle">middle</span>
+        <span class="super">super</span>
+        <span class="text_top">text-top</span>
+        <span class="text-bottom">text-bottom</span>
+        <span class="top">top</span>
+        <span class="bottom">bottom</span>
+        <span class="px">px</span>
+        </div>
+</body>
+</html>

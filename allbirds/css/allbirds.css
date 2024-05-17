@@ -1,0 +1,388 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+/* reset */
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+	font-size: 16px;
+  font-weight: 400;
+	line-height: 1.3;
+	color:var(--birds-black);
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size:1em;
+	font-weight:bold;
+}
+body, h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
+	margin:0;
+	padding:0;
+}
+li {
+	list-style:none;
+}
+
+:root {
+  --birds-black: #212a2f;
+  --side-margin: 24px;
+}
+/* 1.타이포그라피 셋업 */
+.main_title {
+  font-size: 25px;
+  font-weight: 700;
+}
+.sub_title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* 버튼 */
+.btn {
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 46px;
+  letter-spacing: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0 20px;
+  border: 2px solid transparent;
+}
+.btn.shop {width: 200px;}
+.btn.white {
+  background-color: white;
+  color: var(--birds-black);
+}
+.btn.white:hover {
+  background-color: var(--birds-black);
+  color: white;
+}
+.btn.black {
+  background-color: var(--birds-black);
+  color: white;
+}
+.btn.black:hover {
+  background-color: white;
+  color: var(--birds-black);
+  border-color: var(--birds-black);
+}
+/* header */
+header {
+  height: 60px;
+  background-color: white;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index: 100;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+header .logo {
+  width: 120px;
+  height: 38px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0;
+  background: url('../images/allbirds-logo.svg') no-repeat 0 0;
+}
+header .main_menu {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translate(0, -50%);
+} 
+header .main_menu button {
+  border: none;
+  width: 23px;
+  height: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding:0;
+  background-color: transparent;
+  cursor: pointer;
+}
+header .main_menu button::before {content: ''; width:100%; height: 2px; background-color: var(--birds-black);}
+header .main_menu button > span {font-size: 0; width:100%; height: 2px; background-color: var(--birds-black);}
+header .main_menu button::after {content: ''; width:100%; height: 2px; background-color: var(--birds-black);}
+header .main_menu ul {display: none;}
+header .utill_menu {
+  position: absolute;
+  right:30px;
+  top:50%;
+  transform: translate(0, -50%);
+}
+header .utill_menu .text, header .utill_menu .help {
+  display: none;
+}
+header .utill_menu .cart > a {
+  display: block;
+  width: 34px;
+  height: 31px;
+  background-image:url('../images/icon_cart.svg');
+  position:relative;
+  color: var(--birds-black)
+}
+header .utill_menu .cart > a > b{
+  font-size:0;
+}
+header .utill_menu .cart > a > span {
+  position: absolute;
+  left: 11px;
+  top: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  width:15px;
+  text-align: center;
+}
+
+
+/* visual */
+.visual {
+  position: relative;
+}
+.visual > picture {
+  display: block;
+  height: 100vh;
+}
+.visual > picture > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.visual > .text {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+}
+.visual > .text > h2 {font-size: 32px; color:white;}
+.visual > .text > p {
+  font-size: 16px; 
+  color:white; 
+  font-weight: 700;
+  margin:12px 0 20px
+}
+.visual > .text > .btn_area {display: flex;}
+.visual > .text > .btn_area > .btn:first-child {margin-right: 10px}
+
+/* 모듈 product */
+.product {padding: 30px var(--side-margin)}
+.product ul {
+  display: flex;
+}
+.product ul li {
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+}
+.product ul li:nth-child(2), 
+.product ul li:nth-child(3) {
+  display: none;
+}
+.product ul li + li {margin-left:24px}
+.product ul li .photo {width:100%}
+.product ul li .desc {padding:18px}
+.product ul li .desc > p {margin-top: 9px;}
+.product.collection ul li .desc > .sub_title {
+  border-bottom:1px solid #d3d3d3;
+  padding-bottom: 9px;
+}
+.product.collection ul li .desc > p {
+  padding-left: 30px;
+  background: url('../images/icon_wind.png') no-repeat 0 0 / 30px;
+  line-height: 30px;
+}
+.product .main_title {margin-bottom: 24px;}
+.product.collection .main_title {text-align: center;}
+
+/* 모듈 about */
+.about {text-align: center;}
+.about picture {
+  height: 542px;
+  width:100%;
+  display: block;
+}
+.about picture > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.about .main_title {margin-top: 60px;}
+.about p {margin: 30px auto; padding: 0 var(--side-margin)}
+.about .btn_area {display: flex; justify-content: center;}
+.about .btn_area > :first-child {margin-right:10px;}
+
+
+/* aside */
+.get_news {
+  background-color: #f8f7f5;
+  padding:50px var(--side-margin) 30px;
+  height:300px; text-align: center;}
+.get_news h4 {font-weight: 700; letter-spacing: 1px;}
+.get_news .news_info {letter-spacing: 1px; margin: 30px 0;}
+.get_news .get_email {display: flex; flex-direction: column;}
+.get_news .get_email input {
+  height: 50px;
+  padding: 15px;
+  box-sizing: border-box;
+  border-style: none;
+  border-bottom: 2px solid var(--birds-black);
+  margin-bottom: 8px;
+  transition: all 0.5s ease;
+}
+.get_news .get_email input:focus {
+  outline: none;
+  box-shadow: 
+    var(--birds-black) 0px 2px 0px 0px inset,  /* 위 */
+    var(--birds-black) 2px 0px 0px 0px inset,  /* 좌 */
+    var(--birds-black) -2px 0px 0px 0px inset; /* 우*/
+  transform: translate(30px, 0) rotate(320deg);
+}
+.get_news .get_email input::placeholder {
+  font-size: 16px;
+  font-weight: 700;
+  color: #d3d3d3;
+}
+.get_news .news_notice {
+  font-size: 14px;
+  color: #999 ;
+  width: 270px;
+  margin: 30px auto;
+}
+
+/* footer */
+footer {
+  background-color: var(--birds-black);
+  color: white;
+  font-size: 12px;
+  padding: 72px var(--side-margin) 100px;
+}
+footer a {color:white; text-decoration: none;}
+footer > .inner {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+footer h6 {
+  font-size: 14px;
+}
+footer .footer_link > div + div {
+  margin-top:40px;
+}
+footer .footer_link {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+footer .footer_link a {
+  display: block;
+  margin-top:20px;
+}
+footer .footer_info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 60px;
+}
+footer .footer_info > div + div {
+  margin-top:40px;
+}
+footer .footer_info .sns p {
+  margin: 20px 0;
+}
+footer .footer_info .sns > a + a {
+  margin-left:20px
+}
+footer .footer_info .country > a + a {margin-left:25px}
+footer .copyright {text-align: center; margin-top: 40px}
+footer .copyright > p {margin-bottom: 40px;}
+
+
+/* 720 부터~ pad */
+@media screen and (min-width:720px) {
+  .main_title {font-size: 28px; }
+  .about p {width: 666px; }
+  .product ul li:nth-child(2){display: block;}
+  .visual > .text > h2 {font-size: 48px;}
+  .visual > .text {bottom: 70px}
+  .get_news .get_email {flex-direction: row; justify-content: center;}
+  .get_news .get_email input {width:500px; margin: 0 8px 0 0;}
+  footer .footer_link{flex-direction: row; text-align: left;}
+  footer .footer_link > div {width:25%;}
+  footer .footer_link > div + div {margin-top:0;}
+  footer .footer_info {flex-direction: row; text-align: left;}
+  footer .footer_info > div + div {margin-top:0;}
+  footer .footer_info .sns {width:25%}
+  footer .footer_info .certified {width:25%; text-align: center;}
+  footer .footer_info .country {width:50%}
+}
+/* 990 부터 ~ desktop */
+@media screen and (min-width:990px) {
+  .main_title {font-size: 32px;}
+  .product ul li:nth-child(2), 
+  .product ul li:nth-child(3) {display: block;}
+}
+/* 1200 부터~ menu변경 */
+@media screen and (min-width:1200px) {
+  .product {width: 1200px; margin:0 auto}
+  header .main_menu button {display: none;}
+  header .main_menu ul {display: block; display: flex;}
+  header .main_menu ul > li + li {margin-left: 37px}
+  header .main_menu ul li a {
+    color: var(--birds-black);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration-line:none;
+  }
+  header .utill_menu .text, header .utill_menu .help {
+    display: block;
+  }
+  header .utill_menu ul {
+    display: flex;
+    align-items: center;
+  }
+  header .utill_menu ul li a {
+    font-size: 12px;
+    color: var(--birds-black);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  header .utill_menu ul li:first-child {
+    margin-right: 37px;
+  }
+  header .utill_menu .help {
+    margin:0 18px;
+  }
+  header .utill_menu .help > a {
+    display: block;
+    width:25px;
+    height:25px;
+    font-size: 0;
+    background: url('../images/icon_help.svg');
+  }
+}
+
+
+/* 0.초기 셋업 */
+/* 파일과 리셋 셋팅 */
+/* 서체 종류, 본문 글씩 크기, 본문 글씨색, 줄간격 셋팅 body에 설정 */
+/* 주로 많이쓰는 색 변수로 등록 */
+/* 미디어쿼리 */
+
+/* 1.타이포그라피 셋업 */
+/* 메인 타이틀 */
+/* 서브 타이틀 */
+
+/* 2.버튼 */
+/* small, large 크기 */
+/* red, green, blue 크기 */
+
+/* 3.레이아웃 코드 */
+/* header, main, aside, footer */
+/* product, about */
+
+/* 4.모듈 */
+/* product */
+/* about */
+/* visual */
+/* header */
+/* aside */
+/* footer */

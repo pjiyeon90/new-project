@@ -1,0 +1,322 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+	font:normal 16px/1.3 "Noto Sans KR", sans-serif;
+	line-height:1.3;
+	color: var(--allbirds-black);
+    background-color: yellow;
+}
+h1, h2, h3, h4, h5, h6 {font-size:1em;}
+h1, h2, h3, h4, h5, h6, body, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
+	margin:0;
+	padding:0;
+}
+li {list-style:none;}
+
+:root{
+    --allbirds-black: #212A2F;
+    --allbirds-white: #ffffff;
+    --primary-gap: 24px;
+}
+.main_title{
+    font-size: 25px;
+    font-weight: 700;
+}
+.sub_title{ 
+    font-size: 18px;
+    font-weight: 700;
+}
+.btn{
+height: 50px;
+border: none;
+cursor: pointer;
+font-size: 14px;
+text-transform: uppercase; /*자동으로 대문자로 변경해주는*/
+font-weight: 700;
+letter-spacing: 2px;
+border-radius: 2px;
+padding: 0 32px;
+box-sizing: border-box;
+}
+
+.btn.black{
+    background-color: var(--allbirds-black);
+    color: var(--allbirds-white);
+}
+.btn.black:hover{
+    background-color: var(--allbirds-white);
+    border: 2px solid var(--allbirds-black);
+    color: var(--allbirds-black);
+}
+.btn.white{
+    background-color: var(--allbirds-white);
+    color: var(--allbirds-black);
+}
+.btn.white:hover{
+    background-color: var(--allbirds-black);
+    color: var(--allbirds-white);
+}
+.btn + .btn {margin-left: 12px;}
+.btn_wrap{ display: flex; justify-content: center;}
+
+
+/* header */
+header{
+    background-color: var(--allbirds-white);
+    height: 60px;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    left:0;
+    top:0;
+    right:0;
+    z-index: 100;
+    box-shadow: 0 2px 24px rgba(0,0,0,0.09);
+}
+
+header .logo{
+    width: 98px;
+    height: 32px;
+    font-size: 0;
+    background-image: url(../images/allbirds-logo.svg);
+    background-repeat: no-repeat;
+    order: 2;}
+
+header .main_menu{order: 1;}
+
+header .main_menu > button{
+    cursor: pointer;
+    width: 22px;
+    height: 18px;
+    border: none;
+    font-size: 0;
+    order: 1;
+    display: block;
+    background-image: url(../images/icon_menu.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+header .main_menu > ul{display: none; order: 1; }
+header .util_menu{order: 3;}
+header .util_menu > ul{order: 3; }
+header .util_menu > ul > .text{display: none;}
+header .util_menu > ul > .help{display: none;}
+header .util_menu > ul > .cart > a{
+position: relative;
+display: block;
+font-size: 0;
+background: url('../images/icon_cart1.svg') no-repeat 0 0;
+width: 34px;
+height: 31px;
+margin-top: 10px;
+background-repeat: no-repeat;
+/* background-size: 100%;} */
+}
+header .util_menu > ul > .cart > a > span{
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--allbirds-black);
+    position: absolute;
+    left: 50%;
+    top: 2px;
+    transform: translate(-90%, 0); /*장바구니 속 숫자가 가운데 가게 만드는 법*/
+    /* letter-spacing: -1px; 자간 좁게*/
+}
+
+/* visual */
+.visual{
+    height: 100vh; /*vh하면 뷰포트의 값을 기준으로 퍼센테이지*/
+    box-sizing: border-box;
+    position: relative;
+}
+.visual > picture > img{
+ object-fit: cover;
+ width: 100%;
+ height: 100%;
+
+}
+.visual .description{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0 24px;
+    bottom: 30px;
+    color: var(--allbirds-white);
+}
+.visual .description h2{
+    font-size: 32px;
+    font-weight: 700;
+
+}
+.visual .description p{
+    font-size: 18px;
+    font-weight: 400;
+    margin: 13px 0 var(--primary-gap);
+}
+.visual .description .btn_wrap{
+ display: flex;
+}
+.visual .description .btn{
+    width:50%;
+}
+
+/* product*/
+.product{
+   padding: 30px var(--primary-gap);
+   
+}
+.product > ul{
+    display: flex;
+}
+.product > ul > li{
+    background-color: var(--allbirds-white);
+    box-shadow: 0px 8px 24px rgba(0,0,0,0.12);
+}
+.product > ul > li + li{margin-left: var(--primary-gap);}
+.product li:ntn-child(2),
+.product li:ntn-child(3){
+    display: none;
+}
+
+.product > ul > li .photo{width: 100%;}
+.product > .main_title{margin-bottom:var(--primary-gap);;}
+.product .desc{padding: 18px;}
+
+.product.collection >.desc > .main_title{text-align: center;}
+.product.collection >.desc > .sub_title{
+    border-bottom: 1px solid #D3D4D5;
+    padding-bottom: var(--primary-gap);
+    margin-bottom: 9px;
+}
+.product.collection >.desc p{
+    line-height: 30px;
+    padding-left: 30px;
+    background:  url('../images/icon_tree.png') no-repeat 0 0 / 30px 30px;
+}
+
+/* about */
+.about picture{
+    height: 542px;
+    display: block;
+}
+
+.about picture img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.about .main_title {margin-top: 60px;}
+.about > p {margin: 30px auto; max-width: 666px; padding: 0 24px;}
+.about .btn_wrap .btn{width: 180px;}
+
+/* aside */
+aside{
+    background-color: #f8f7f5;
+    text-align: center;
+    padding: 50px var(--primary-gap) 30px;
+    
+}
+aside .email_desc{ margin: 30px 0;}
+aside .input_wrap{
+ display: flex;
+ flex-direction: column;
+}
+aside .input_wrap input{
+    border: none;
+    border-bottom:  2px solid var(--allbirds-black);
+    height: 50px;
+    margin-bottom: 8px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+aside .input_wrap input::placeholder{
+    font-size: 14px;
+    color: #D3D4D5;
+}
+aside .input_wrap input:focus{
+    outline: none;
+    border: 2px solid var(--allbirds-black);
+}
+aside .info{
+    color: #999;
+    font-size: 14px;
+    width: 270px;
+    margin: 30px auto;
+}
+
+/* footer */
+footer { height: 800px;}
+
+/*
+1. 재료 셋팅(서체, 글자크기, 색상, 버튼)
+2. 부품 셋팅
+3. 레이아웃 셋팅
+4. 모듈 단위 작업
+
+*/
+
+/* 720부터 ~ */
+@media screen and (min-width:720px) {
+    body{background-color: red;}
+   .main_title{ font-size: 28px;}
+   .sub_title{ font-size: 22px;}
+   .visual .description h2 {font-size: 40px;}
+   .visual .description .btn{width:200px;}
+   .product li:ntn-child(2){
+    display: block;
+   }
+   aside .input_wrap{flex-direction: row; justify-content: center;}
+   aside .input_wrap input{width: 500px; margin-bottom: 0; margin-right: 8px;}
+  }
+  /* 990부터 ~ */
+  @media screen and (min-width:990px){
+    body{background-color: green;}
+    .main_title{ font-size: 32px;}
+    .visual .description h2 {font-size: 48px;}
+    .visual .description {width: 990px; margin:0 auto;}
+    .product li:ntn-child(2){
+     display: block;
+    }
+  }
+  /* 1200부터 ~ */
+  @media screen and (min-width:1200px){
+    body{background-color: orange;}
+    header .main_menu > button{display: none;}
+    header .main_menu > ul{display: flex;}
+    header .main_menu > ul > li + li{margin-left: 37px;}
+    header .main_menu > ul > li > a,
+    header .util_menu > ul > .text > a{
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--allbirds-black);
+        text-decoration-line: none;
+    }
+    header .util_menu > ul{display: flex; align-items: center;}
+    /* header .util_menu > ul > li + li{
+        margin-left: 20px;
+    } */
+    header .util_menu > ul > .text{display: block;}
+    header .util_menu > ul > .text + .text{margin-left: 37px;}
+    header .util_menu > ul > .help{
+        display: block;
+        font-size: 0;
+        width: 25px;
+        height: 25px;
+        margin: 0 18px;
+        background: url('../images/icon_help1.svg') no-repeat 0 0;
+    }
+    .product{
+    max-width: 1200px;
+    margin: 0 auto;
+    }
+    
+  }
+
+/*
+1.마크업 (모든층에 요소 포함)
+2.미디어쿼리별 존재 여부
+3.미디어쿼리별 표현 작업
+*/

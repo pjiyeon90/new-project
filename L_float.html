@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float</title>
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <style>
+        body{
+            padding:20px;
+        }
+
+        .page{
+            border: 4px solid black;
+            margin: 30px;
+            padding: 20px;
+            /* height: 200px;  float을 쓸때는 height을 쓰면 안됨 */
+            /* overflow: hidden; p가 아래에 꽉차게 버티고 있어서 할머니가 P를 안아주면서 딱 정리가되었다.*/
+        }
+        .page > img{
+            float: left;
+            /* opacity: 0.5; */
+            margin-right: 20px;
+        }
+        .page > p{
+            border: 1px solid red;
+            /*padding-left: 170px; 사진 이미지 옆에도 일괄적으로 글이 나오게 하려면 */
+            /* margin-left: 20px; 플롯:left 준애한테 마진을 줘야지 떨어짐*/
+        }
+        .mother{
+            width:270px;
+            padding:20px;
+            border: 2px solid lime;
+            /* overflow: hidden; */
+            /* float: left; */
+            /* display: inline-block; */
+            /* display: table-cell; */
+            /* position: absolute; */
+            /* 재계산이 이뤄지게 만들어주는 명령어*/
+           
+        }
+        .mother.left{
+            float: left;
+            margin-bottom: 20px;
+        }
+        .mother.right{
+            float: right;
+        }
+
+        .mother > .photo{
+            width:100px;
+            height: 100px;
+            margin-right: 20px;
+            border:10px solid lime;
+            float:left;
+        }
+        .mother > p{
+            border: 1px solid red;
+            font-size: 13px;
+        }
+        /* .mother::after{
+            content: '';
+            display: block;
+            border: 1px solid blue;
+            clear: left;
+            /* clear: right; */
+            /* clear: both; 클리어는 block에만 듣기때문에 display:block해줘야한다. }*/
+       
+        .grandmom{
+            border: 4px solid black;
+            padding: 20px;
+            overflow: hidden;
+            width: 670px;
+        }
+        .bottom{
+            border: 2px solid red;
+            padding: 10px;
+            clear:both; /*왼쪽에 한덩어리, 오른쪽에 한덩어리있으니까 clear:both로 해줘야함*/
+        }
+
+        .image_text{
+            width: 673px;
+            padding: 15px;
+            box-sizing: border-box;
+            border: 5px solid black;
+        }
+        .image_text > li{
+           /* overflow: hidden; 이미지가 넘쳐서 정렬이 깨지는 것을 막아줌 float:left와 자주사용됨*/
+            border: 1px solid #DBDBDB;
+            border-radius: 5px;
+            align-content:center;
+            padding: 13px 17px;
+        }
+
+        .image_text li::after {
+            content: '';
+            display: block;
+            clear: both;
+            /* border: 1px solid blue; overflow:hidden을 사용하지 않을시 맨 아래 가상 선택자를 만들어 막아주면 됨*/
+        }
+        .image_text > li + li{
+            margin-top: 10px;
+        }
+        .image_text > li > img {
+            display: block; /*img와 h2,p태그 사이에 약간의 갭이 발생하는 것을 없애줌 verticul-align: middle줘도 없어짐*/
+            float: left;
+            margin-right: 20px;
+            
+        }
+        .image_text > li > h2{
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 11px;
+        }
+        .image_text > li > p{
+            font-size: 12px;
+        }
+        .tap_menu{
+            border-bottom: 1px solid black;
+            overflow: hidden;
+            padding-left: 17px;
+        }
+        .tap_menu > li{
+            /* vertical-align: middle; */
+            float: left;
+            
+        }
+        /* .tap_menu > li:nth-child(1){
+            margin-left: 17px;;
+        } */
+        .tap_menu > li:nth-child(2) > a{
+            background-color: #9C9C9C;
+            
+        }
+        .tap_menu > li:nth-child(2)> a{
+             color: white;
+        }
+       
+        .tap_menu > li + li {
+            margin-left: 5px;
+        }
+        .tap_menu > li > a{
+            text-decoration: none;
+            color: black;
+            display: block;
+            border: 1px solid #DADADA;
+            border-radius: 10px 10px 0 0;
+            font-size: 20px;
+            font-weight: bold;
+            border-bottom: none;
+            padding: 10px 20px;
+
+        }
+        /* .tap_menu::after{
+            content: "";
+            display: block;
+            clear: both;
+            border-bottom: 1px solid black;
+        } */
+        .list{
+            border: 1px solid black;
+            /* padding: 20px 0 0 20px; */
+            padding:10px;
+            width: 682px;
+            box-sizing: border-box;
+            overflow: hidden;
+            background-color: rgb(248, 248, 248);
+        }
+        .list > li{
+            float: left;
+            /* width: 27%; */
+            width: 200px;
+            height: 200px;
+            box-sizing: border-box;
+            background-color: #EBEBEB;
+            padding: 10px;
+            margin: 10px;
+            /* margin:0 20px 20px 0; */
+        }
+        /* .list > li:nth-child(3n){
+            margin-right: 0;
+        } */
+        /*.list > li:nth-last-child(-n+3){ -는 뒤에서부터 + 3번째까지, 3칸을 플러스로 간다.
+            margin-bottom: 0;
+        }*/
+        .list > li >img{
+            display: block;
+            margin-bottom: 10px;
+        }
+        .list > li> p{
+            font-size: 12px;
+            padding:10px 20px 16px 0;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    
+       <br>
+       <br>
+       <hr>
+    <div class="grandmom">
+    <div class="mother left">
+        <div class="photo"></div>
+        <p>LEFT.HTML은 선형적(linearity)입니다. 브라우저가 위에서 아래로 순서대로 처리된다는 말이죠.</p>
+        <!-- <div class="clear"></div> --></div>
+        <div class="mother right">
+            <div class="photo"></div>
+            <p>LEFT.HTML은 선형적(linearity)입니다. 브라우저가 위에서 아래로 순서대로 처리된다는 말이죠.</p>
+    </div><!--mother right-->
+    <p class="bottom">Lorem ipsum carrots, enhanced undergraduate</p>
+</div><!--grandmom-->
+    <br>
+    <br>
+    <ul class="image_text">
+        <li>
+            <!-- <img src="https://via.placeholder.com/163x143" alt=""> -->
+            <img src="https://placehold.it/163x143" alt="이미지박스">
+            <h2>Lorem ipsum dolor sit amet</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci adipiscing feugiat orci nisi, sapien ullamcorper molestie. Non pulvinar in facilisis tincidunt cras amet. Vulputate scelerisque scelerisque imperdiet sem dignissim congue vulputate. Pulvinar est eget maecenas aliquam mattis cras diam volutpat pellentesque. Elementum diam, adipiscing blandit feugiat </p>
+        </li>
+        <li>
+            <img src="https://placehold.it/163x143" alt="이미지박스">
+            <h2>Lorem ipsum dolor sit amet</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci adipiscing feugiat orci nisi, sapien ullamcorper molestie. Non pulvinar in facilisis tincidunt cras amet. Vulputate scelerisque scelerisque imperdiet sem dignissim congue vulputate. Pulvinar est eget maecenas aliquam mattis cras diam volutpat pellentesque. Elementum diam, adipiscing blandit feugiat </p>
+        </li>
+        <li>
+            <img src="https://placehold.it/163x143" alt="이미지박스">
+            <h2>Lorem ipsum dolor sit amet</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci adipiscing feugiat orci nisi, sapien ullamcorper molestie. Non pulvinar in facilisis tincidunt cras amet. Vulputate scelerisque scelerisque imperdiet sem dignissim congue vulputate. Pulvinar est eget maecenas aliquam mattis cras diam volutpat pellentesque. Elementum diam, adipiscing blandit feugiat </p>
+        </li>
+        
+    </ul>
+    <br><br><br>
+    <ul class="tap_menu">
+        <li><a href="">교실</a></li>
+        <li><a href="">운동장</a></li>
+        <li><a href="">놀이터</a></li>
+        <li><a href="">학교강당</a></li>
+    </ul>
+    
+   <br><br><br>
+   <div class="page">
+    <img src="https://via.placeholder.com/150x200" alt="이미지"/>
+    <p>Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality, Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality</p>
+    <p>Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality, Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality</p>
+    <p>Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality, Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality</p>
+    <p>Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality, Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality</p>
+    <p>Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality, Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality</p>
+    <p>Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality, Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality</p>
+    <p>Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality, Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality</p>
+    <p>Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality, Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality</p>
+    <p>Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality, Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality</p>
+    <p>Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality, Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality</p>
+    <p>Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality, Lorem ipsum carrots, enhanced undergraduate developer, but they do occaecat time and vitality</p>
+   </div> <!--page-->
+   <br><br><br>
+   
+    <ul class="list">
+        <li>
+            <img src="https://via.placeholder.com/180x120" alt="식사이미지">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing </p>
+        </li>
+        <li>
+            <img src="https://via.placeholder.com/180x120" alt="식사이미지">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing </p>
+        </li>
+        <li>
+            <img src="https://via.placeholder.com/180x120" alt="식사이미지">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing </p>
+        </li>
+        <li>
+            <img src="https://via.placeholder.com/180x120" alt="식사이미지">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing </p>
+        </li>
+        <li>
+            <img src="https://via.placeholder.com/180x120" alt="식사이미지">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing </p>
+        </li>
+        <li>
+            <img src="https://via.placeholder.com/180x120" alt="식사이미지">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing </p>
+        </li>
+        <li>
+            <img src="https://via.placeholder.com/180x120" alt="식사이미지">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing </p>
+        </li>
+        <li>
+            <img src="https://via.placeholder.com/180x120" alt="식사이미지">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing </p>
+        </li>
+        <li>
+            <img src="https://via.placeholder.com/180x120" alt="식사이미지">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing </p>
+        </li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상속자 inherith</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital@0;1&family=Roboto:ital,wght@0,100;0,400;0,900;1,100;1,400;1,900&display=swap');
+       body > h1 + div.text > p{ /*014 명시도(.text)는 10 나머지는 1*/
+            color:red;
+            font: 400 16px/1.5 "Roboto", sans-serif;
+        }
+       #jiyeon .text > p{ /*011*/
+            color:blue !important;
+        }
+        h1{
+            font-family: "Noto Sans", sans-serif;
+            font-weight: 900;
+        }
+        h2{
+            font-family: "Roboto", sans-serif;
+            font-weight: 100;
+            font-style:normal;
+            /*font-variant:small-caps;*/
+            font-size:24px;
+            line-height: 21px;
+            font: 100 24px/21px "Roboto", sans-serif; /*font size/line-height 이순으로 꼭 와야한다.*/
+            letter-spacing: -1px;
+            word-spacing: 20px;
+            border: 1px solid black;
+            text-align: center;
+            text-indent:20px; /*들여쓰기*/
+            text-decoration: underline;
+        }
+
+        h2 span{
+            color:red;
+            text-decoration: underline;
+            text-decoration-color: red;
+            text-decoration-line: solid;
+            text-decoration-thickness: 4px;
+            text-transform: uppercase;
+        }
+
+    </style>
+</head>
+<body id="jiyeon">
+    <h1>상속 배우기</h1>
+    <h2><span>hello world!</span></h2>
+    <div class="text">
+       <!--아이디보다 우선 순위가 더 높다.<p style="color:red">안녕하세요<a href="http://jiyeon.kr">링크</a></p>-->
+       <p style="color:red">안녕하세요<a href="http://jiyeon.kr">링크</a></p>
+
+    </div>
+</body>
+</html>

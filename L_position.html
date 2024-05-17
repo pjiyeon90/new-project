@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포지션</title>
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <style>
+        .mother{
+            width:270px;
+            padding:20px;
+            border: 2px solid lime;
+            /* position: relative; */
+            /* overflow: hidden; */
+            /* float: left; */
+            /* display: inline-block; */
+            /* display: table-cell; */
+            /* position: absolute; */
+            /* 재계산이 이뤄지게 만들어주는 명령어*/
+           
+        }
+        .mother.left{
+            float: left;
+            margin-bottom: 20px;
+        }
+        .mother{
+            float: right;
+            border-color: blue;
+            position: relative;
+        }
+        /* .mother.left > .photo{
+            z-index: 10;
+        } */
+        .mother.right > .photo{
+            border-color: blue;
+        }
+        .mother > .photo{
+            width:100px;
+            height: 100px;
+            margin-right: 20px;
+            border:10px solid lime;
+            float:left;
+            /* position: absolute;
+            top: 10px;
+            left: 10px;
+            right: auto;
+            bottom: auto; */
+
+        }
+        .mother > p{
+            border: 1px solid red;
+            font-size: 13px;
+        }
+        /* .mother::after{
+            content: '';
+            display: block;
+            border: 1px solid blue;
+            clear: left;
+            /* clear: right; */
+            /* clear: both; 클리어는 block에만 듣기때문에 display:block해줘야한다. }*/
+       
+        .grandmom{
+            border: 4px solid black;
+            padding: 20px;
+            overflow: hidden;
+            width: 670px;
+            position: relative;
+        }
+        .bottom{
+            border: 2px solid red;
+            padding: 10px;
+            clear:both; /*왼쪽에 한덩어리, 오른쪽에 한덩어리있으니까 clear:both로 해줘야함*/
+        }
+        header{
+            background-color: black;
+            color: white;
+            width: auto;
+            height: auto;
+            position: fixed;
+            top: 50%; /*top이 0, bottom이 0이면 top이 이김, 그래서 top:auto로 하면 아래에 붙음*/
+            left: 50%;
+            right: auto;
+            bottom: auto;
+            z-index: 100;
+            /* transition: transform 2s ease; */
+            transition: all 0.4s cubic-bezier(1, 0.01, 0, 0.99); /*all은 첫프레임에서 다음프레임이 다른 변경된 사항을 다 찾아낸다*/
+            /* transform: translate(-50%,-50%); */
+            /*가운데 정렬할때 top:50%, left:50%, tranform: translate(-50%,-50%)하는 것이 좋다.*/
+            /* transform:scale(0.5); */
+           /* margin-left: -150px; 헤더 박스 크기의 절반만큼 보내준다. 기준이 박스의 왼쪽면이 기준이니까 딱 절반을 만들려면 */
+            /* margin-top: -100px; */
+           /* margin-left: auto; */
+           /* margin-right: auto; */
+          /* margin: auto; 가운데 정렬, 오토 계산시 반드시 넓이와 높이가 있어야한다. */
+         }
+
+        header:hover{
+            transform: scale(3) rotate(360deg);
+            transform-origin: center center; /*위치값을 정중앙으로 맞추기 위한 것, top bottom 등등으로 기준점을 바꿀수 있음*/
+        }
+
+        
+        .comment{
+            position: absolute;
+            top:-12px;
+            right:-12px;
+        }
+        .comment > img{
+            width: 24px;
+            height: 24px;
+        }
+        .comment > span{
+            position: absolute;
+            top:-2px;
+            right:24px; /*img의 크기가 24니까 오른쪽에서 24만큼을 주면 img 크기 바로 옆에 또는 100%를 줘도됨*/
+            /*left로 수치값을 주면 숫자가 늘어날 경우 왼쪽에서 오른쪽 방향으로 숫자가 늘어나서 숫자가 겹치게됨*/
+            color: red;
+            font-size: 11px;
+        }
+
+        /*page*/
+        .page{
+            border: 10px solid red;
+            padding-top: 20px;
+            width: 700px;
+            margin: 20px;
+            position: relative;
+        }
+        .list{
+        padding: 20px;
+        box-sizing: border-box;
+       }
+       .image_text{
+            border: 1px solid #DBDBDB;
+            border-radius: 5px  ;
+            padding: 13px 17px;
+            color:black;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            /* align-items: stretch; */
+        }
+        .image_text + .image_text{
+            margin-top: 10px;
+        }
+        .image_text > .photo{
+            margin-right: 20px;
+            position: relative;
+        }
+        .image_text > .photo > .wish{
+            position: absolute;
+            border: none;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            font-size: 0;
+            top: 10px;
+            right:10px;
+            /* background: transparent url('./images/wish.svg') no-repeat scroll center / auto ; */
+            background-color: transparent; /*배경을 투명하게 만드는 것*/
+            background-image: url('./images/wish.svg');
+            background-size: 100%; /* 가장 중요! 백그라운드 사이즈를 width,height을 기존 svg사이즈보다 줄여쓸때 사용!*/
+            /* background-size: auto; */
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .image_text > img{
+            vertical-align: top;
+
+        }
+        .image_text + .image_text{
+            margin-top: 10px;
+        }
+        .image_text > .text > h4{ 
+            color: black;
+            font-size: 20px;
+            margin-bottom: 11px;
+        }
+        .image_text > .text > p{
+            font-size: 12px;
+        }
+        .tab_menu {
+        border-bottom: 1px solid black;
+        display: flex;
+        padding-left: 17px;
+        font-family: "Noto Sans KR", sans-serif;
+        }
+        .tab_menu > li + li {
+          margin-left: 5px;
+        }
+        .tab_menu > li > a {
+          border: 1px solid #DADADA;
+          border-bottom: none;
+          border-radius: 10px 10px 0 0;
+          padding: 10px 20px;
+          display: block;
+          text-decoration-line: none;
+          color:black;
+          font-weight: 700;
+          font-size:20px;
+        }
+        .tab_menu > li > a:hover {
+          border: 1px solid #9C9C9C;
+          border-bottom: none;
+          background-color: #9C9C9C;
+          color:white
+        }
+        .more{
+            position: absolute;
+            top:30px;
+            right:10px;
+            font-size: 14px;
+            color:#464646;
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <div class="page">
+        <ul class="tab_menu">
+            <li><a href="">교실</a></li>
+            <li><a href="">운동장</a></li>
+            <li><a href="">놀이터</a></li>
+            <li><a href="">학교강당</a></li>
+          </ul>
+    <div class="list">
+        <div class="image_text">
+            <div class="photo">
+            <img src="https://placehold.it/170X140" alt="이미지1">
+            <button class="wish">wish</button> 
+            <!-- <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0.5C13.9 0.5 12.05 1.55 11 3.2C9.95 1.55 8.1 0.5 6 0.5C2.7 0.5 0 3.2 0 6.5C0 12.45 11 18.5 11 18.5C11 18.5 22 12.5 22 6.5C22 3.2 19.3 0.5 16 0.5Z" fill="white"/>
+            </svg>-->
+            
+            </div><!--photo-->
+            <div class="text">
+        <h4>Lorem ipsum dolor sit amet</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci adipiscing feugiat orci nisi, sapien ullamcorper molestie. Non pulvinar in facilisis tincidunt cras amet. Vulputate scelerisque scelerisque imperdiet sem dignissim congue vulputate. Pulvinar est eget maecenas aliquam mattis cras diam volutpat pellentesque. Elementum diam, adipiscing blandit feugiat</p>
+            </div><!--text-->
+        </div><!--image_text-->
+        <div class="image_text">
+            <div class="photo">
+            <img src="./images/Rectangle 1.png" alt="이미지1">
+            <button class="wish">wish</button> 
+        </div><!--photo-->
+            <div class="text">
+        <h4>Lorem ipsum dolor sit amet</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci adipiscing feugiat orci nisi, sapien ullamcorper molestie. Non pulvinar in facilisis tincidunt cras amet. Vulputate scelerisque scelerisque imperdiet sem dignissim congue vulputate. Pulvinar est eget maecenas aliquam mattis cras diam volutpat pellentesque. Elementum diam, adipiscing blandit feugiat</p>
+            </div><!--text-->
+        </div><!--image_text-->
+        <div class="image_text">
+            <div class="photo">
+                <img src="./images/Rectangle 1.png" alt="이미지1">
+                <button class="wish">wish</button> 
+            </div><!--photo-->
+            <div class="text">
+        <h4>Lorem ipsum dolor sit amet</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci adipiscing feugiat orci nisi, sapien ullamcorper molestie. Non pulvinar in facilisis tincidunt cras amet. Vulputate scelerisque scelerisque imperdiet sem dignissim congue vulputate. Pulvinar est eget maecenas aliquam mattis cras diam volutpat pellentesque. Elementum diam, adipiscing blandit feugiat</p>
+            </div><!--text-->
+        </div><!--image_text-->
+    </div><!--list-->
+    <a href="#" targe="_blank" class="more">모두보기</a>
+</div><!--page-->
+
+    <header><img src="https://via.placeholder.com/321x200" alt="박스이미지"></header>
+    <div class="grandmom">
+        <div class="mother left">
+            <div class="photo"></div>
+            <p>LEFT.HTML은 선형적(linearity)입니다. 브라우저가 위에서 아래로 순서대로 처리된다는 말이죠.</p>
+            <a href="#" target="_blank" class="comment"><img src="./images/talkbox.png" alt="토크박스">
+            <span>8</span>
+            </a>
+            <!-- <div class="clear"></div> -->
+            </div>
+            <div class="mother right">
+                <div class="photo"></div>
+                <p>LEFT.HTML은 선형적(linearity)입니다. 브라우저가 위에서 아래로 순서대로 처리된다는 말이죠.</p>
+                <a href="#" target="_blank" class="comment"><img src="./images/talkbox.png" alt="토크박스">
+                <span>777</span>
+                </a>
+        </div><!--mother right-->
+        <p class="bottom">Lorem ipsum carrots, enhanced undergraduate</p>
+        
+    </div><!--grandmom--> 
+</body>
+</html>

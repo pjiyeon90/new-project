@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>graph</title>
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital@0;1&family=Roboto:ital,wght@0,100;0,400;0,900;1,100;1,400;1,900&display=swap');
+        .mother{
+            width:456px;
+            border: 2px solid black;
+            padding: 20px;
+            background: gray url('./images/landing-background.gif') no-repeat scroll center / auto;
+        }
+        .mother > div{
+            height: 27px;
+            color: white;
+            vertical-align: middle;
+            text-align: right;
+            padding-top: 8px;
+        }
+        .mother > div > span{
+            color: black;
+            margin-right: 10px;
+            margin-left: 5px;
+        }
+        .mother > div > b {
+            color: white;
+        }
+        .mother > div + div{
+            margin-top: 15px;
+        }
+        .mother > div:first-child{
+            width:100%;
+            background-color: red;
+            
+            /* width: carc(100% - 10px); */
+        }
+        .mother > div:nth-child(2){
+            width: 75%;
+            background-color: orange; 
+        }
+        .mother > div:nth-child(3){
+            width: 54%;
+            background-image: url('./images/red_pattern.jpg');
+        }
+        .mother > div:last-child{
+            width: 64%;
+            background-color: lime;
+        }
+        body{
+            font-family: "Roboto", sans-serif;
+        }
+        .wrap{
+            width: 500px;
+        }
+        header{
+            background-color: black;
+            font-size: 24px;
+            color: white;
+            line-height: 39px;
+            padding-left:20px;
+            margin-bottom: 12px;
+            padding-top: 1px;
+        }
+        header > h2{
+            font-weight: normal;
+        }
+        header > h2 > time{
+            padding-left: 2px;
+            color: red;
+            font-size: 10px;
+            font-weight: lighter;
+            vertical-align: 5px;
+        }
+        .contents{
+            border: 4px solid black;
+        }
+        .contents > p{
+            margin: 20px;
+            border: 4px solid gray;
+        }
+        .contents > p.best{
+            color:magenta;
+        }
+        .contents > p.newest{
+            border: 4px solid red;
+        }
+        .button{
+            margin: 20px;
+            background-color: black;
+            text-align: center;
+            line-height: 50px;
+            width: 452px;
+            vertical-align: middle;
+        }
+        .button > strong > a > img{
+        line-height: 40px;
+        vertical-align: -7px;
+        padding-right: 10px;
+    }
+        .button > a{
+            color:lime;
+            padding-right:10px; 
+            text-decoration-line: none;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="mother">
+        <!-- <img src="./images/landing-background.gif" alt="패턴 배경"> -->
+        <div><b>1위</b><span>100%</span></div>
+        <div><b>2위</b><span>75%</span></div>
+        <div><b>3위</b><span>54%</span></div>
+        <div><b>4위</b> <span>64%</span></div>
+    </div>
+    <hr>
+    <article class="wrap">
+        <header>
+            <h2>테크 아티클<time>2024-04-08</time><h2>
+        </header>
+        <div class="contents">
+            <p>Lorem ipsum carrots, enhanced undergraduate developer, but they do Lem ipsum carrots, enhanced undergraduate developer, but</p>
+            <p class="newest">Lorem ipsum carrots, enhanced undergraduate developer, but they do Lem ipsum carrots, enhanced undergraduate developer, but</p>
+            <p class="best">Lorem ipsum carrots, enhanced undergraduate developer, but they do Lem ipsum carrots, enhanced undergraduate developer, but they do Lorem ipm carrots, enhanced undergraduate developer, but they</p>
+            <p>Lorem ipsum carrots, enhanced undergraduate developer, but they do Lem ipsum carrots, enhanced undergraduate developer, but they do Lorem ipm carrots, enhanced undergraduate developer, but they</p>
+            <p class="newest best">Lorem ipsum carrots, enhanced undergraduate developer, but they do Lem ipsum carrots, enhanced undergraduate developer, but they do Lorem ipm carrots, enhanced undergraduate developer, but they</p>
+            <div class="button">
+                <strong><a href="#"><img src="images/cil_arrow-circle-left.png" alt="prev"></a></strong>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <strong><a href="#"><img src="images/cil_arrow-circle-right.png" alt="next"></a></strong>
+            </div>
+    </div><!--contents-->
+       
+
+</article>
+
+
+
+</body>
+</html>

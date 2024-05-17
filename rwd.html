@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <title>반응형웹</title>
+    <style>
+        .mother{
+            /* width:800px; %계산법은? 자식 사이즈222px/ 부모 사이즈644px *100 = 34.472049*/
+            /* width: 552px; */
+            height: 300px;
+            background-color: red;
+        
+        }
+        .son{
+            width:65.760869%;    /*363px이였음    / 552px*/
+            height: 245px;
+            background-color: blue;
+            margin: 0 auto;
+            
+        }
+        .grandson{
+            width: 56.749311%; /*206px   /   직계 부모.son의 사이즈를 따른다. 363px*/
+            height: 140px;
+            background-color: yellow;
+            margin: 0 auto;
+        }
+        
+        .list {
+            /* width: 1252px; */
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            /* overflow: hidden; */
+            padding: 30px;
+            box-sizing: border-box;
+            background-color: lime;
+            /* margin: 0 auto; */
+        }
+       
+        .list > li{
+            background-color: red;
+            /*width: 23.711340%; 276px / 1252-44px*2 = 1164  */
+            height: 276px;
+            padding:10px;
+            box-sizing: border-box;
+        }
+        .list > li > div{
+            height: 100%;
+            background-color: yellow;
+        }
+
+      
+       /* .list > ul > li + li{
+            margin-left: 1.718213%;    20px / 1164px 
+        }*/
+        .list2{
+            background-color: blue;
+            padding: 30px 40px;
+            overflow: hidden;
+        }
+
+        .list2 > ul{
+           width: calc(100% + 20px); /*ul 전체를 오른쪽으로 20px을 밀어준다. 그럼 정렬이 안맞게 됨*/
+           margin-left: -10px; /*정렬을 위해 20px의 절반인 10px을 왼쪽으로 밀어준다.*/
+        }
+    
+        .list2 > ul > li{
+            float: left;
+            width: 100%;
+            height: 276px;
+            background-color: lime;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        /* .list2 > ul > li + li{
+            margin-top: 20px;
+        } */
+
+        .list2 > ul > li > div{
+            background-color: red;
+            height: 100%;
+        }
+
+        body{ border: 10px solid yellow;}
+
+       .list3{
+            width: 1000px;
+            height: 300px;
+            background-color: black;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            padding: 20px;
+            gap:10px;
+        }
+
+        .list3 > div{
+            background-color: red;
+        }
+        /* ~720px까지 
+        @media screen and (max-width: 720px){
+            body{border: 10px solid red;}
+
+        }*/
+        /* 721부터 ~ 989 까지
+        @media screen and (min-width: 721px) and (max-width: 989px){
+            body{border: 10px solid pink;}
+            
+        }  */
+        /* 990부터 ~ 무한대까지
+        @media screen and (min-width: 990px) {
+          body{border: 10px solid orange}  
+        }*/
+
+        /* ~720px부터 ~ */
+        @media screen and (min-width: 720px){
+            body{border: 10px solid red;}
+            .list3{
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            }
+
+            .list {
+                flex-direction: row;
+            }
+            .list > li{
+                width: 50%;
+            }
+            .list2 > ul > li{
+                width: 50%;
+            }
+
+        }
+        /* 780부터 ~ */
+        @media screen and (min-width: 780px){
+            body{border: 10px solid green;}
+            .list3{
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            }
+            .list > li{
+                width: 33.33333%
+            }
+            .list2 > ul > li{
+                width: 33.33333%;
+            }
+            
+        }  
+        /* 990부터 ~ 무한대까지*/
+        @media screen and (min-width: 990px) {
+          body{border: 10px solid orange}
+          .list3{
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            }
+            .list > li{
+                width: 25%
+            }
+
+            .list2 > ul > li{
+                width: 25%;
+            }
+        }
+
+        
+       
+        /* ~990까지
+        @media screen and (max-width: 990px) {
+          body{border: 10px solid orange}  
+        }*/
+          /* ~780px 까지 
+          @media screen and (max-width: 780px){
+            body{border: 10px solid green;}
+            
+        } */
+        /* ~720px까지 
+        @media screen and (max-width: 720px){
+            body{border: 10px solid red;}
+
+        }*/
+
+        .box{
+            width: 1000px;
+            height: 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box"></div>
+    <div class="list3">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div><!--list3-->
+
+
+    <div class="list2" >
+    <ul >
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+    </ul>
+    </div><!--list2-->
+
+    
+    <ul class="list">
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+    </ul>
+
+
+    <div class="mother">
+        <div class="son">
+            <div class="grandson">
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

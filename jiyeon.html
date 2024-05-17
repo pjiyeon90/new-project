@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>지연의 일기</title>
+<style>
+    div{border: 2px solid black}
+    ul{border: 2px solid red}
+    h1,h2,h3,h4,h5,h6{
+    font-size:24px;}
+   p.first{border: 2px solid blue}
+   p#first{border: 2px dotted green}
+
+</style>
+</head>
+<body class="jiyeon" > <!--tab누르면 들여쓰기,땡기는건 shift+tab-->
+    <dl> <!--dl 밑에는 dt와 dd가 올수 있고 dt가 우선적으로 나와줘야한다. dd는 1가지말고 2가지이상 사용해도된다.-->
+    <dt>HTML</dt>
+    <dd>HTML은 웹페이지를 만들기 위한 언어입니다.</dd>
+    <dt>CSS</dt>
+    <dd>CSS는 웹페이지를 꾸미기 위한 언어입니다.</dd>
+    <dt>Javascript</dt>
+    <dd>Javascript는 웹페이지를 동적으로 만들기 위한 언어입니다.</dd>
+    <dd>Javascript는 웹페이지를 동적으로 만들기 위한 언어입니다.</dd>
+    <dd>
+        <P class="first" id="first">dd의 자식으로 P태그나 ul,li가 올수 있다.</P>
+        <P>dd의 자식으로 P태그나 ul,li가 올수 있다.</P>
+        <P>dd의 자식으로 P태그나 ul,li가 올수 있다.</P>
+        <P>dd의 자식으로 P태그나 ul,li가 올수 있다.</P>
+    </dd>
+    </dl>
+    <div>
+        <h3>오늘의 음료</h3>
+        <ol> <!--ol과 ul 밑에는 자식은 무조건 li만 올수 있다.-->
+            <li>콜라</li>
+            <li>사이다
+                <ul>
+                    <li>복숭아사이다</li>
+                    <li>귤사이다</li>
+                    <li>귤사이다</li>
+                    <li>귤사이다</li>
+                    <li>귤사이다</li>
+                    <li>귤사이다</li>
+                </ul>
+            </li>
+            <li>환타</li>
+            </ol>
+    <ul>
+        <li>콜라</li>
+        <li>사이다
+            <ul>
+                <li>레몬사이다</li>
+                <li>자몽사이다</li>
+            </ul>
+        </li>
+        <li>환타</li>
+        </ul>
+    </div>
+ <p>경기IT새일센터는 IT분야에 취업과 창업을 희망하는 경력단절 여성과 미취업 여성에게 다양한 프로그램을 제공하고 있습니다. UX,UI 디자인, 웹퍼블리싱, 마케팅 전문가 등 경기IT새일센터는 IT분야에 취업과 창업을 희망하는 경력단절 여성과 미취업 여성에게 다양한 프로그램을 제공하고 있습니다.
+ </p>
+ <h1>박지연입니다.</h1>
+ <h2>박지연입니다.</h2>
+ <h3>박지연입니다.</h3>
+ <h4>박지연입니다.</h4>
+ <h5>박지연입니다.</h5>
+ <h6>박지연입니다.</h6><!--alt+shift+아래방향키글쓰고 바로 뒤에 커서 둔다음에 단축키-->
+
+</body>
+</html>
